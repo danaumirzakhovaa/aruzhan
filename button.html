@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formylove</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            text-align: center;
+            background: #1E2A4A;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .section-screen {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .space {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-sparkle {
+            position: absolute;
+            font-size: 28px;
+            opacity: 0.5;
+            pointer-events: none;
+            animation: floatGently 4s ease-in-out infinite alternate;
+        }
+
+        .sp-1 { left: 8%; top: 20%; }
+        .sp-2 { right: 8%; top: 35%; animation-delay: 1.5s; }
+
+        @keyframes floatGently {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #ffffff;
+            line-height: 1.4;
+            text-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            max-width: 700px;
+        }
+
+        p {
+            color: white;
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            max-width: 800px;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .img-card {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .img-card::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 15%; right: 15%;
+            background: rgba(223, 197, 210, 0.15);
+            filter: blur(30px);
+            border-radius: 40px;
+            z-index: -1;
+        }
+
+        .mypicture img, .cutie img {
+            width: 100%;
+            max-width: 850px;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .dana img {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .mypicture img:hover, .dana img:hover, .cutie img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Подсказка при скролле */
+        .scroll-hint {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #dfc5d2;
+            text-transform: uppercase;
+            opacity: 0.6;
+            animation: pulseHint 2s infinite;
+        }
+
+        @keyframes pulseHint {
+            0%, 100% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 0.8; transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section-screen">
+        <span class="floating-sparkle sp-1">✨</span>
+        <span class="floating-sparkle sp-2">🎀</span>
+        <h1>YOUR MAIN GIFT<br>IIIISSSS......</h1>
+    </div>
+
+    <div class="space">
+        <div class="scroll-hint">keep scrolling... ↓</div>
+    </div>
+
+    <div class="section-screen">
+        <span class="floating-sparkle sp-1">💖</span>
+        <p>meeeeeeeee!!!</p>
+        <div class="mypicture img-card">
+            <img src="dana.jpeg" alt="picture of me">
+        </div>
+    </div>
+
+    <div class="space">
+        <div class="scroll-hint">keep scrolling... ↓</div>
+    </div>
+
+    <div class="section-screen">
+        <span class="floating-sparkle sp-2">☁️</span>
+        <p>fine, i am joking</p>
+        <div class="dana poor img-card">
+            <img src="danala.jpeg" alt="picture of me 2">
+        </div>
+    </div>
+
+    <div class="space">
+        <div class="scroll-hint">almost there... ❤️</div>
+    </div>
+
+    <div class="section-screen" style="min-height: 95vh;">
+        <p>stand up and try to find your real present in our flat zhanym. i hope you like it[hearts]</p>
+        <div class="cutie img-card">
+            <img src="ourphoto.jpeg" alt="picture of us">
+        </div>
+    </div>
+
+</body>
+</html>

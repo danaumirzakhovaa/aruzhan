@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aruzhan</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #1E2A4A;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        
+        .glow-1 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(223, 197, 210, 0.25) 0%, rgba(30, 42, 74, 0) 70%);
+            top: -50px;
+            left: -50px;
+            pointer-events: none;
+            animation: pulse 6s infinite alternate;
+        }
+
+        .glow-2 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(120, 140, 200, 0.25) 0%, rgba(30, 42, 74, 0) 70%);
+            bottom: -50px;
+            right: -50px;
+            pointer-events: none;
+            animation: pulse 8s infinite alternate-reverse;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        
+        .decor {
+            position: absolute;
+            font-size: 26px;
+            user-select: none;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: floatSlow 4s ease-in-out infinite alternate;
+        }
+
+        .d1 { top: 12%; left: 8%; animation-delay: 0s; }
+        .d2 { bottom: 15%; left: 10%; animation-delay: 1s; }
+        .d3 { top: 15%; right: 9%; animation-delay: 2s; }
+        .d4 { bottom: 18%; right: 8%; animation-delay: 1.5s; }
+
+        @keyframes floatSlow {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-15px) rotate(8deg); }
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 430px;
+            padding: 45px 35px;
+            border-radius: 30px;
+            background: rgba(74, 90, 128, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-box h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 28px;
+            letter-spacing: -0.3px;
+        }
+
+        .login-box label {
+            display: block;
+            margin-top: 18px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: lowercase;
+        }
+
+        .login-box input {
+            display: block;
+            width: 100%;
+            padding: 14px 18px;
+            margin-top: 8px;
+            font-size: 14px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.92);
+            color: #1E2A4A;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .login-box input:focus {
+            border-color: #dfc5d2;
+            background: #ffffff;
+            box-shadow: 0 0 15px rgba(223, 197, 210, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .login-box button {
+            display: block;
+            width: 100%;
+            margin-top: 32px;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1E2A4A;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .login-box button:hover {
+            background-color: #dfc5d2;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(223, 197, 210, 0.4);
+        }
+
+        #message {
+            margin-top: 22px;
+            text-align: center;
+            color: #ff8b8b;
+            font-size: 13px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <span class="decor d1">✨</span>
+    <span class="decor d2">🎀</span>
+    <span class="decor d3">💖</span>
+    <span class="decor d4">☁️</span>
+
+    <div class="login-card">
+        <div class="login-box">
+            <h1>enter your data here to get a gift</h1>
+
+            <label for="name">name</label>
+            <input 
+                type="text" 
+                id="name"
+                placeholder="enter your name"
+                autocomplete="off"
+            >
+
+            <label for="iin">iin</label>
+            <input 
+                type="text" 
+                id="iin"
+                placeholder="enter your iin"
+                autocomplete="off"
+            >
+
+            <button onclick="login()">Login</button>
+
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            let name = document.getElementById("name").value.trim();
+            let iin = document.getElementById("iin").value.trim();
+
+            if (name === "Dana" && iin === "080206600152") {
+                window.location.href = "gift.html";
+            } else if (name === "Aruzhan" && iin === "081007654688") {
+                window.location.href = "gift.html";
+            } else {
+                document.getElementById("message").innerHTML = "Wrong name or iin! sgl saittan ";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gift</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0; }
+
+        html {
+            scroll-behavior: smooth;  }
+
+        body {
+            text-align: center;
+            background: #1E2A4A;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: white;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;}
+
+        .section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2; }
+        .side-decor {
+            position: absolute;
+            font-size: 32px;
+            user-select: none;
+            opacity: 0.6;
+            animation: float 3s ease-in-out infinite alternate;
+            pointer-events: none;}
+
+        .side-left { left: 5%; top: 30%; }
+        .side-right { right: 5%; top: 40%; animation-delay: 1.5s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-5deg); }
+            100% { transform: translateY(-15px) rotate(5deg); }
+        }
+        .media-glow {
+            position: relative;
+            display: inline-block;
+        }
+        .media-glow::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            background: linear-gradient(135deg, rgba(223, 197, 210, 0.3), rgba(74, 90, 128, 0.4));
+            border-radius: 30px;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        p.question {
+            color: white;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .cat1 img, .cat2 img {
+            width: 100%;
+            max-width: 750px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.4s ease;
+        }
+        .cat1 img:hover, .cat2 img:hover {
+            transform: scale(1.02);}
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            outline: none;
+        }
+
+        .cat-box h1 {
+            font-size: 46px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .gift {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            max-width: 950px;
+            margin: 0 auto 40px auto;
+        }
+
+        .gift img {
+            width: 310px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+        }
+
+        .text-box {
+            width: 100%;
+            max-width: 480px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 28px;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .text-box h2 {
+            color: #4A5A80;
+            font-size: 32px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .text-box p {
+            color: #4A5A80;
+            font-size: 17px;
+            line-height: 1.6;
+            font-weight: 500;
+            word-wrap: break-word;
+        }
+
+        button {
+            padding: 16px 45px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 30px;
+            background: #ffffff;
+            color: #1E2A4A;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #dfc5d2;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(223, 197, 210, 0.4);
+        }
+
+        .scroll-down-icon {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #dfc5d2;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <span class="side-decor side-left">✨</span>
+        <span class="side-decor side-right">🎀</span>
+        <p class="question">do you know what date today is?</p>
+        <div class="cat1 media-glow">
+            <img src="cuttecore.jpeg" alt="Cat 2">
+        </div>
+        <div class="scroll-down-icon">↓ scroll</div>
+    </div>
+
+    <div class="section">
+        <span class="side-decor side-left">💖</span>
+        <span class="side-decor side-right">✨</span>
+        <p class="question">7 th october?</p>
+        <div class="cat2 media-glow">
+            <img src="dc977238a0a2bdabef590df31601c79d.jpg" alt="Cat 1">
+        </div>
+        <div class="scroll-down-icon">↓ scroll</div>
+    </div>
+
+    <div class="section">
+        <span class="side-decor side-left">🌷</span>
+        <span class="side-decor side-right">☁️</span>
+        <p class="question">YEA IT IS A BIRTHDAY OF MY GIRL</p>
+        <div class="media-glow">
+            <video controls autoplay muted>
+                <source src="aruzhvd.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="scroll-down-icon">↓ scroll</div>
+    </div>
+
+    <div class="section">
+        <div class="cat-box">
+            <h1>HAPPY BIRTHDAY ARUZHAN</h1>
+        </div>
+
+        <div class="gift">
+            <div class="media-glow">
+                <img src="aruzhaaan.jpeg" alt="your photo">
+            </div>
+
+            <div class="text-box">
+                <h2>❤️</h2>
+                <p>
+                    Happy birthday, my dear!
+                    I hope you always smile
+                    and have the happiest days with me, entire our life. 
+                    love you my zhanymsol, bby, gashygym,pookie,darling,sweetheart,
+                    cookie,aguzyan,zhanymsol,aruzhh,zhanym,altynym,botam,
+                    mahabbatym,suluyam,pizdesim,suiktim,suikimdim,
+                    shegolym,stunning bombym, aruzhanym.
+                </p>
+            </div>
+        </div>
+        <button onclick="clickme()">Click me </button>
+    </div>
+
+    <script>
+        function clickme() {window.location.href = "button.html";}
+    </script>
+</body>
+</html>
